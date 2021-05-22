@@ -6,4 +6,14 @@
     <string name="donate_plasma_or_find_plasma">Donate Plasma or find plasma donor</string>
     <string name="oxygen_centers_or_re_filling">Oxygen Centers or Re-filling</string>
     <string name="contribute_data">contribute data</string>
+    <string name="name_of_resource">Name of Resource</string>
+    <string-array name="resource_drop">
+        <item>
+            Remdesivir, Favipiravir, Fabiflu,
+            Tocilizumab
+        </item>
+        <item>
+            Oxygen Kit, Cylinders, Refilling Centers
+        </item>
+    </string-array>
 </resources>

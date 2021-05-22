@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".ui.fragment.ContributeDataFragment">
+    tools:context=".ui.fragment.upload.ContributeDataFragment">
 
 
     <ScrollView
@@ -53,20 +53,21 @@
                 app:counterEnabled="true"
                 app:counterMaxLength="20"
                 app:errorEnabled="true"
-                app:layout_constraintEnd_toEndOf="parent"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu" app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/viqew233">
 
-                <com.google.android.material.textfield.TextInputEditText
+                <AutoCompleteTextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:id="@+id/dropperOR"
                     android:layout_gravity="center"
                     android:layout_marginStart="22dp"
                     android:layout_marginEnd="22dp"
                     android:drawablePadding="10dp"
                     android:ems="10"
-                    android:hint="Name of Resource"
+                    android:hint="@string/name_of_resource"
                     android:inputType="textPersonName"
                     app:layout_constraintStart_toStartOf="parent"
                     tools:layout_editor_absoluteY="300dp" />
@@ -80,6 +81,7 @@
                 app:counterEnabled="true"
                 app:counterMaxLength="20"
                 app:errorEnabled="true"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
@@ -103,7 +105,8 @@
                 android:id="@+id/mob_id_ed"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                app:counterEnabled="true"
+
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"         app:counterEnabled="true"
                 app:counterMaxLength="10"
                 app:errorEnabled="true"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -131,7 +134,8 @@
                 android:layout_height="wrap_content"
                 app:counterEnabled="true"
                 app:counterMaxLength="30"
-                app:errorEnabled="true"
+
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox" app:errorEnabled="true"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
@@ -158,7 +162,8 @@
                 app:counterEnabled="true"
                 app:counterMaxLength="100"
                 app:errorEnabled="true"
-                app:layout_constraintEnd_toEndOf="parent"
+
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"   app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/email_id_ed_1">
@@ -183,6 +188,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 app:counterEnabled="true"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 app:counterMaxLength="20"
                 app:errorEnabled="true"
                 app:layout_constraintBottom_toBottomOf="parent"

@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/entryFragment"
-        android:name="com.akshatsahijpal.covidone.ui.fragment.EntryFragment"
+        android:name="com.akshatsahijpal.covidone.ui.fragment.start.EntryFragment"
         android:label="fragment_entry"
         tools:layout="@layout/fragment_entry" >
         <action
@@ -26,12 +26,12 @@
     </fragment>
     <fragment
         android:id="@+id/contributeDataFragment"
-        android:name="com.akshatsahijpal.covidone.ui.fragment.ContributeDataFragment"
+        android:name="com.akshatsahijpal.covidone.ui.fragment.upload.ContributeDataFragment"
         android:label="fragment_contribute_data"
         tools:layout="@layout/fragment_contribute_data" />
     <fragment
         android:id="@+id/medSuppliesFragment"
-        android:name="com.akshatsahijpal.covidone.ui.fragment.MedSuppliesFragment"
+        android:name="com.akshatsahijpal.covidone.ui.fragment.unload.MedSuppliesFragment"
         android:label="fragment_med_supplies"
         tools:layout="@layout/fragment_med_supplies" >
         <action
@@ -40,7 +40,7 @@
     </fragment>
     <fragment
         android:id="@+id/oxygenCenterFragment"
-        android:name="com.akshatsahijpal.covidone.ui.fragment.OxygenCenterFragment"
+        android:name="com.akshatsahijpal.covidone.ui.fragment.unload.OxygenCenterFragment"
         android:label="fragment_oxygen_center"
         tools:layout="@layout/fragment_oxygen_center" >
         <action
@@ -49,7 +49,7 @@
     </fragment>
     <fragment
         android:id="@+id/plasmaFragment"
-        android:name="com.akshatsahijpal.covidone.ui.fragment.PlasmaFragment"
+        android:name="com.akshatsahijpal.covidone.ui.fragment.unload.PlasmaFragment"
         android:label="fragment_plasma"
         tools:layout="@layout/fragment_plasma" >
         <action

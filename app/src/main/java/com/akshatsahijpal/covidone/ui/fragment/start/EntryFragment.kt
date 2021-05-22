@@ -1,4 +1,4 @@
-package com.akshatsahijpal.covidone.ui.fragment
+package com.akshatsahijpal.covidone.ui.fragment.start
 
 import android.os.Bundle
 import android.view.View
