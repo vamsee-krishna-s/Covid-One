@@ -1,4 +1,4 @@
-package com.akshatsahijpal.covidone.db.remote
+package com.akshatsahijpal.covidone.db.remote.upload
 
 import android.util.Log
 import com.akshatsahijpal.covidone.data.CovidData

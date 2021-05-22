@@ -1,4 +1,4 @@
-package com.akshatsahijpal.covidone.ui.fragment.unload
+package com.akshatsahijpal.covidone.ui.fragment.unload.plasma
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

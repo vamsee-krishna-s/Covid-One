@@ -1,4 +1,4 @@
-package com.akshatsahijpal.covidone.db.remote
+package com.akshatsahijpal.covidone.db.remote.unload.dataSource
 
 import android.util.Log
 import com.akshatsahijpal.covidone.data.CovidData
@@ -8,9 +8,9 @@ import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.async
 import kotlinx.coroutines.tasks.await
 import java.lang.Exception
+import javax.inject.Inject
 
-class FirebaseUnload {
-    private var db = FirebaseFirestore.getInstance()
+class FetchFireData @Inject constructor(private var db: FirebaseFirestore) {
     private var dataSetD = arrayListOf<CovidData>()
     private suspend fun getDataSnapshot(): QuerySnapshot? {
         return try {
@@ -22,10 +22,10 @@ class FirebaseUnload {
             null
         }
     }
-
+    // returns the data
     suspend fun generateDataSet(): ArrayList<CovidData> {
-        var st = GlobalScope.async {
-            var snap: QuerySnapshot? = getDataSnapshot()
+        val st = GlobalScope.async {
+            val snap: QuerySnapshot? = getDataSnapshot()
             for (i in snap?.documents!!) {
                 val myObject = i.toObject(CovidData::class.java)
                 if (myObject != null) {

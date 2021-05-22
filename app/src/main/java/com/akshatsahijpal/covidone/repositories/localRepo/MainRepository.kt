@@ -1,8 +1,8 @@
-package com.akshatsahijpal.covidone.repositories
+package com.akshatsahijpal.covidone.repositories.localRepo
 
 import com.akshatsahijpal.covidone.data.CovidData
 import com.akshatsahijpal.covidone.db.local.RunDAO
-import com.akshatsahijpal.covidone.db.remote.FetchFireData
+import com.akshatsahijpal.covidone.db.remote.unload.dataSource.FetchFireData
 import javax.inject.Inject
 
 class MainRepository @Inject constructor(

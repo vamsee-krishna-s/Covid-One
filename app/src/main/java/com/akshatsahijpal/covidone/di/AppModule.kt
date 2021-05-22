@@ -3,10 +3,10 @@ package com.akshatsahijpal.covidone.di
 import android.content.Context
 import androidx.room.Room
 import com.akshatsahijpal.covidone.db.local.RunningDatabase
-import com.akshatsahijpal.covidone.db.remote.FetchFireData
-import com.akshatsahijpal.covidone.db.remote.FirebaseUpload
-import com.akshatsahijpal.covidone.repositories.LogsRepository
-import com.akshatsahijpal.covidone.repositories.MainRepository
+import com.akshatsahijpal.covidone.db.remote.unload.dataSource.FetchFireData
+import com.akshatsahijpal.covidone.db.remote.upload.FirebaseUpload
+import com.akshatsahijpal.covidone.repositories.uploadingRepo.LogsRepository
+import com.akshatsahijpal.covidone.repositories.localRepo.MainRepository
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -51,4 +51,8 @@ object AppModule {
     @Provides
     @Singleton
     fun provideLogRepo(upl: FirebaseUpload) = LogsRepository(upl)
+
+/*    @Provides
+    @Singleton
+    fun provideFetchFireData(db: FirebaseFirestore) = FetchFireData(db)*/
 }

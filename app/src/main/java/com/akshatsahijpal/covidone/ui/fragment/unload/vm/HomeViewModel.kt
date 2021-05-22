@@ -6,7 +6,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.akshatsahijpal.covidone.data.CovidData
-import com.akshatsahijpal.covidone.repositories.MainRepository
+import com.akshatsahijpal.covidone.repositories.localRepo.MainRepository
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.async
 import kotlinx.coroutines.launch
