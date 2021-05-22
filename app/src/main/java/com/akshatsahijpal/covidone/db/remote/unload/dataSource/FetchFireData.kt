@@ -1,7 +1,9 @@
 package com.akshatsahijpal.covidone.db.remote.unload.dataSource
 
+import android.provider.SyncStateContract
 import android.util.Log
 import com.akshatsahijpal.covidone.data.CovidData
+import com.akshatsahijpal.covidone.util.Constants
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.QuerySnapshot
 import kotlinx.coroutines.GlobalScope
@@ -14,7 +16,7 @@ class FetchFireData @Inject constructor(private var db: FirebaseFirestore) {
     private var dataSetD = arrayListOf<CovidData>()
     private suspend fun getDataSnapshot(): QuerySnapshot? {
         return try {
-            val data = db.collection("covid-store")
+            val data = db.collection(Constants.covidMedicinePath)
                 .get()
                 .await()
             data

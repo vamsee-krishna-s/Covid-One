@@ -1,5 +1,6 @@
 package com.akshatsahijpal.covidone.repositories.paginateSource
 
+import android.util.Log
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
 import com.akshatsahijpal.covidone.data.CovidData
@@ -14,6 +15,7 @@ class CovidMedDataSource constructor(private val data: FetchFireData) : PagingSo
         val position = params.key ?: 1
         return try {
             val response =  data.generateDataSet()
+            Log.d("test", "rere ${response.get(0)}")
             LoadResult.Page(
                 data = response,
                 prevKey = if (position == 1) null else position - 1,

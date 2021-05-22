@@ -50,6 +50,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/line"
             android:text="Location"
+            android:id="@+id/locationN"
             android:padding="20sp"
             android:textSize="17sp"
             />
