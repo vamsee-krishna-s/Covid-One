@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/entryFragment">
+
+    <fragment
+        android:id="@+id/entryFragment"
+        android:name="com.akshatsahijpal.covidone.ui.fragment.EntryFragment"
+        android:label="fragment_entry"
+        tools:layout="@layout/fragment_entry" >
+        <action
+            android:id="@+id/action_entryFragment_to_medSuppliesFragment"
+            app:destination="@id/medSuppliesFragment" />
+        <action
+            android:id="@+id/action_entryFragment_to_oxygenCenterFragment"
+            app:destination="@id/oxygenCenterFragment" />
+        <action
+            android:id="@+id/action_entryFragment_to_contributeDataFragment"
+            app:destination="@id/contributeDataFragment"
+            app:popUpTo="com.android.tools.property.panel.api.EnumValue$Companion$LOADING$1@11752bc" />
+        <action
+            android:id="@+id/action_entryFragment_to_plasmaFragment"
+            app:destination="@id/plasmaFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/contributeDataFragment"
+        android:name="com.akshatsahijpal.covidone.ui.fragment.ContributeDataFragment"
+        android:label="fragment_contribute_data"
+        tools:layout="@layout/fragment_contribute_data" />
+    <fragment
+        android:id="@+id/medSuppliesFragment"
+        android:name="com.akshatsahijpal.covidone.ui.fragment.MedSuppliesFragment"
+        android:label="fragment_med_supplies"
+        tools:layout="@layout/fragment_med_supplies" >
+        <action
+            android:id="@+id/action_medSuppliesFragment_to_contributeDataFragment"
+            app:destination="@id/contributeDataFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/oxygenCenterFragment"
+        android:name="com.akshatsahijpal.covidone.ui.fragment.OxygenCenterFragment"
+        android:label="fragment_oxygen_center"
+        tools:layout="@layout/fragment_oxygen_center" >
+        <action
+            android:id="@+id/action_oxygenCenterFragment_to_contributeDataFragment"
+            app:destination="@id/contributeDataFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/plasmaFragment"
+        android:name="com.akshatsahijpal.covidone.ui.fragment.PlasmaFragment"
+        android:label="fragment_plasma"
+        tools:layout="@layout/fragment_plasma" >
+        <action
+            android:id="@+id/action_plasmaFragment_to_contributeDataFragment"
+            app:destination="@id/contributeDataFragment" />
+    </fragment>
+</navigation>

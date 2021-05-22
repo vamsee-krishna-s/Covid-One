@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Covid One</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="covid_19_black_fungus_med_supplies">Covid-19 black fungus Med supplies</string>
+    <string name="donate_plasma_or_find_plasma">Donate Plasma or find plasma donor</string>
+    <string name="oxygen_centers_or_re_filling">Oxygen Centers or Re-filling</string>
+    <string name="contribute_data">contribute data</string>
+</resources>

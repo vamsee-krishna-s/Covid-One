@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "363264018192",
+    "project_id": "covid-one",
+    "storage_bucket": "covid-one.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:363264018192:android:7e369125905368f8028795",
+        "android_client_info": {
+          "package_name": "com.akshatsahijpal.covidone"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "363264018192-6ocvisvd2p8ub7i023jd63snm8a8tbqm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBwSSg3-9DE8inwt5R6et95Q7qLhnr7TvY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "363264018192-6ocvisvd2p8ub7i023jd63snm8a8tbqm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
