@@ -18,9 +18,8 @@
             app:destination="@id/oxygenCenterFragment" />
         <action
             android:id="@+id/action_entryFragment_to_contributeDataFragment"
-            app:destination="@id/contributeDataFragment"
-            app:popUpTo="com.android.tools.property.panel.api.EnumValue$Companion$LOADING$1@11752bc" />
-        <action
+            app:destination="@id/contributeDataFragment"/>
+         <action
             android:id="@+id/action_entryFragment_to_plasmaFragment"
             app:destination="@id/plasmaFragment" />
     </fragment>
@@ -28,7 +27,11 @@
         android:id="@+id/contributeDataFragment"
         android:name="com.akshatsahijpal.covidone.ui.fragment.upload.ContributeDataFragment"
         android:label="fragment_contribute_data"
-        tools:layout="@layout/fragment_contribute_data" />
+        tools:layout="@layout/fragment_contribute_data" >
+        <action
+            android:id="@+id/action_contributeDataFragment_to_entryFragment"
+            app:destination="@id/entryFragment" />
+    </fragment>
     <fragment
         android:id="@+id/medSuppliesFragment"
         android:name="com.akshatsahijpal.covidone.ui.fragment.unload.MedSuppliesFragment"

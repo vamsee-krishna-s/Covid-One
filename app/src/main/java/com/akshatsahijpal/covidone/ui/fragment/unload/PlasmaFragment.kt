@@ -7,7 +7,9 @@ import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import com.akshatsahijpal.covidone.R
 import com.akshatsahijpal.covidone.databinding.FragmentPlasmaBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class PlasmaFragment : Fragment(R.layout.fragment_plasma) {
     private var _binding: FragmentPlasmaBinding? = null
     private lateinit var navController: NavController

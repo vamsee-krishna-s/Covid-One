@@ -7,10 +7,20 @@
     <string name="oxygen_centers_or_re_filling">Oxygen Centers or Re-filling</string>
     <string name="contribute_data">contribute data</string>
     <string name="name_of_resource">Name of Resource</string>
+    <string name="state_and_city">State and City</string>
+    <string name="submit">Submit</string>
+    <string name="details">Details</string>
+    <string name="address">Address</string>
+    <string name="contact_number">Contact Number</string>
+    <string name="name_of_store_or_person">Name of Store or Person</string>
+    <string name="contribute_data4">Contribute Data</string>
     <string-array name="resource_drop">
         <item>
             Remdesivir, Favipiravir, Fabiflu,
             Tocilizumab
+        </item>
+        <item>
+            Plasma Donor
         </item>
         <item>
             Oxygen Kit, Cylinders, Refilling Centers

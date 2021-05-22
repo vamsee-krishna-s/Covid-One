@@ -9,8 +9,9 @@ import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import com.akshatsahijpal.covidone.R
 import com.akshatsahijpal.covidone.databinding.FragmentMedSuppliesBinding
+import dagger.hilt.android.AndroidEntryPoint
 
-
+@AndroidEntryPoint
 class MedSuppliesFragment : Fragment(R.layout.fragment_med_supplies) {
     private var _binding: FragmentMedSuppliesBinding? = null
     private lateinit var navController: NavController

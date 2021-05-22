@@ -6,7 +6,7 @@ import com.akshatsahijpal.covidone.data.CovidData
 import com.akshatsahijpal.covidone.repositories.LogsRepository
 
 class ContributeViewModel @ViewModelInject constructor(private var repo: LogsRepository): ViewModel() {
-    fun upload(usr: CovidData){
-        repo.uploadData(usr)
+    fun upload(usr: CovidData, dropDownList: Array<String>){
+        repo.uploadData(usr, dropDownList)
     }
 }
