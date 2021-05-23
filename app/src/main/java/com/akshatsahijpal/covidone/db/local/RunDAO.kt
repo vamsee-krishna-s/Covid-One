@@ -13,4 +13,9 @@ interface RunDAO {
 
     @Query("SELECT * FROM covid_table")
     fun getAllData(): List<CovidData>
+
+    @Query("SELECT * FROM covid_table WHERE StateCity LIKE :query")
+    fun getSearchResult(query:String)
+
+
 }
