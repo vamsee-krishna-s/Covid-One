@@ -1,6 +1,5 @@
 package com.akshatsahijpal.covidone.db.remote.unload.dataSource
 
-import android.provider.SyncStateContract
 import android.util.Log
 import com.akshatsahijpal.covidone.data.CovidData
 import com.akshatsahijpal.covidone.util.Constants

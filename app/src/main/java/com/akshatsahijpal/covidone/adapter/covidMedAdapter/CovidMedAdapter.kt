@@ -1,4 +1,4 @@
-package com.akshatsahijpal.covidone.adapter
+package com.akshatsahijpal.covidone.adapter.covidMedAdapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.akshatsahijpal.covidone.data.CovidData
 import com.akshatsahijpal.covidone.databinding.DipItemBinding
 
-class CovidMedAdapter: PagingDataAdapter<CovidData, CovidMedAdapter.Holder>(COMPARE) {
+class CovidMedAdapter: PagingDataAdapter<CovidData, CovidMedAdapter.Holder>(COMPARE)  {
     inner class Holder(private var _bind: DipItemBinding): RecyclerView.ViewHolder(_bind.root){
         fun bind(set: CovidData) {
             _bind.apply {
@@ -27,6 +27,9 @@ class CovidMedAdapter: PagingDataAdapter<CovidData, CovidMedAdapter.Holder>(COMP
                 return oldItem == newItem
             }
 
+            override fun getChangePayload(oldItem: CovidData, newItem: CovidData): Any? {
+                return super.getChangePayload(oldItem, newItem)
+            }
         }
     }
 
@@ -41,4 +44,5 @@ class CovidMedAdapter: PagingDataAdapter<CovidData, CovidMedAdapter.Holder>(COMP
         val view = DipItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return Holder(view)
     }
+
 }

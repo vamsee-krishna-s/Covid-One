@@ -2,11 +2,13 @@ package com.akshatsahijpal.covidone.ui.fragment.start
 
 import android.os.Bundle
 import android.view.View
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import com.akshatsahijpal.covidone.R
 import com.akshatsahijpal.covidone.databinding.FragmentEntryBinding
+
 
 class EntryFragment : Fragment(R.layout.fragment_entry) {
     private var _binding: FragmentEntryBinding? = null
@@ -14,6 +16,7 @@ class EntryFragment : Fragment(R.layout.fragment_entry) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         _binding = FragmentEntryBinding.bind(view)
         navController = Navigation.findNavController(view)
         clicks()
@@ -35,5 +38,14 @@ class EntryFragment : Fragment(R.layout.fragment_entry) {
         _binding?.outlinedButton?.setOnClickListener {
             navController.navigate(R.id.action_entryFragment_to_contributeDataFragment)
         }
+    }
+    override fun onResume() {
+        super.onResume()
+        (activity as AppCompatActivity?)!!.supportActionBar!!.hide()
+    }
+
+    override fun onStop() {
+        super.onStop()
+        (activity as AppCompatActivity?)!!.supportActionBar!!.show()
     }
 }
