@@ -75,7 +75,12 @@ class MedSuppliesFragment : Fragment(R.layout.fragment_med_supplies) {
         searchView.setOnQueryTextListener(object :
             androidx.appcompat.widget.SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
-                return false
+                if(query != null){
+                    _binding?.recyclerView2?.scrollToPosition(0)
+                    model.searchModel(query)
+                    searchView.clearFocus()
+                }
+                return true
             }
 
             override fun onQueryTextChange(newText: String?): Boolean {

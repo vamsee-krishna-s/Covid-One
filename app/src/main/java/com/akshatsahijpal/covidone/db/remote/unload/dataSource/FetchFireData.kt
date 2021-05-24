@@ -3,7 +3,6 @@ package com.akshatsahijpal.covidone.db.remote.unload.dataSource
 import android.util.Log
 import com.akshatsahijpal.covidone.data.CovidData
 import com.akshatsahijpal.covidone.db.local.RunDAO
-import com.akshatsahijpal.covidone.db.local.RunningDatabase
 import com.akshatsahijpal.covidone.util.Constants
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.QuerySnapshot

@@ -19,7 +19,7 @@ class CovidMedRepository @Inject constructor(
     private val dao: RunDAO
 ) {
 
-    fun getCovidMedData() =
+/*    fun getCovidMedData() =
         Pager(
             PagingConfig(
                 pageSize = 5,
@@ -29,7 +29,7 @@ class CovidMedRepository @Inject constructor(
             pagingSourceFactory = {
                 CovidMedDataSource(db)
             }
-        ).liveData
+        ).liveData*/
 
     fun getSearchResult(query: String):
             LiveData<PagingData<CovidData>> {
