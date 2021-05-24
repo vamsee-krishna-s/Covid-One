@@ -9,6 +9,5 @@ import com.akshatsahijpal.covidone.data.CovidData
     version = 1
 )
  abstract class RunningDatabase : RoomDatabase() {
-
     abstract fun getRunDao(): RunDAO
 }

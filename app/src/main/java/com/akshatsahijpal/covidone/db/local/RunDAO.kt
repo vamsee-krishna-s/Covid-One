@@ -1,5 +1,6 @@
 package com.akshatsahijpal.covidone.db.local
 
+import androidx.paging.PagingSource
 import androidx.room.*
 import com.akshatsahijpal.covidone.data.CovidData
 
@@ -15,7 +16,6 @@ interface RunDAO {
     fun getAllData(): List<CovidData>
 
     @Query("SELECT * FROM covid_table WHERE StateCity LIKE :query")
-    fun getSearchResult(query:String)
-
+    fun getSearchResult(query:String) : PagingSource<Int, CovidData>
 
 }

@@ -43,7 +43,7 @@ class MedSuppliesFragment : Fragment(R.layout.fragment_med_supplies) {
             adap.retry()
         }
         _binding?.recyclerView2?.layoutManager = LinearLayoutManager(requireContext())
-        model.covidMedData.observe(viewLifecycleOwner) {
+        model.getDataSetr().observe(viewLifecycleOwner) {
             Log.d("run", "res->$it")
             adap.submitData(viewLifecycleOwner.lifecycle, it)
         }

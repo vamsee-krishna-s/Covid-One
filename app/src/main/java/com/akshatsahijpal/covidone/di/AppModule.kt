@@ -2,6 +2,7 @@ package com.akshatsahijpal.covidone.di
 
 import android.content.Context
 import androidx.room.Room
+import com.akshatsahijpal.covidone.db.local.RunDAO
 import com.akshatsahijpal.covidone.db.local.RunningDatabase
 import com.akshatsahijpal.covidone.db.remote.unload.dataSource.FetchFireData
 import com.akshatsahijpal.covidone.db.remote.upload.FirebaseUpload
@@ -38,7 +39,7 @@ object AppModule {
 
     @Singleton
     @Provides
-    fun provideFirebaseUnloader(db: FirebaseFirestore) = FetchFireData(db)
+    fun provideFirebaseUnloader(db: FirebaseFirestore, dao: RunDAO) = FetchFireData(db, dao)
 
     @Provides
     @Singleton

@@ -2,6 +2,8 @@ package com.akshatsahijpal.covidone.db.remote.unload.dataSource
 
 import android.util.Log
 import com.akshatsahijpal.covidone.data.CovidData
+import com.akshatsahijpal.covidone.db.local.RunDAO
+import com.akshatsahijpal.covidone.db.local.RunningDatabase
 import com.akshatsahijpal.covidone.util.Constants
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.QuerySnapshot
@@ -11,7 +13,10 @@ import kotlinx.coroutines.tasks.await
 import java.lang.Exception
 import javax.inject.Inject
 
-class FetchFireData @Inject constructor(private var db: FirebaseFirestore) {
+class FetchFireData @Inject constructor(
+    private var db: FirebaseFirestore,
+    private var dao: RunDAO
+    ) {
     private var dataSetD = arrayListOf<CovidData>()
     private suspend fun getDataSnapshot(): QuerySnapshot? {
         return try {
@@ -31,6 +36,7 @@ class FetchFireData @Inject constructor(private var db: FirebaseFirestore) {
                 val myObject = i.toObject(CovidData::class.java)
                 if (myObject != null) {
                     dataSetD.add(myObject)
+                    dao.insertRun(myObject)
                 }
                 Log.d("Check This Result->", "${i.toObject(CovidData::class.java)}")
             }
@@ -38,4 +44,5 @@ class FetchFireData @Inject constructor(private var db: FirebaseFirestore) {
         }
         return st.await()
     }
+
 }
