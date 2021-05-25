@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.View
 import android.widget.ArrayAdapter
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.viewModels
 import androidx.navigation.NavController
@@ -41,5 +42,14 @@ class ContributeDataFragment : Fragment(R.layout.fragment_contribute_data) {
             Toast.makeText(requireContext(), "Data Uploaded!!!", Toast.LENGTH_SHORT).show()
             navController.navigate(R.id.action_contributeDataFragment_to_entryFragment)
         }
+    }
+    override fun onResume() {
+        super.onResume()
+        (activity as AppCompatActivity?)!!.supportActionBar!!.hide()
+    }
+
+    override fun onStop() {
+        super.onStop()
+        (activity as AppCompatActivity?)!!.supportActionBar!!.show()
     }
 }

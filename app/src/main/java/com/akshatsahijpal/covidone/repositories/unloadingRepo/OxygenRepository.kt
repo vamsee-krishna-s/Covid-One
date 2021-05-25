@@ -9,6 +9,7 @@ import com.akshatsahijpal.covidone.data.CovidData
 import com.akshatsahijpal.covidone.db.local.RunDAO
 import com.akshatsahijpal.covidone.db.remote.unload.dataSource.FetchPlasmaData
 import com.akshatsahijpal.covidone.db.remote.unload.dataSource.FetchQxygenData
+import com.akshatsahijpal.covidone.util.Constants
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -33,9 +34,10 @@ class OxygenRepository @Inject constructor(
 
     fun getSearchResult(query: String):
             LiveData<PagingData<CovidData>> {
-        GlobalScope.launch{
+        GlobalScope.launch {
             db.generateDataSet()
         }
+        val pathToSet: String = Constants.pathToData[2]
         return Pager(
             PagingConfig(
                 pageSize = 5,
@@ -43,7 +45,12 @@ class OxygenRepository @Inject constructor(
                 enablePlaceholders = true
             )
         ) {
-            dao.getSearchResult(query)
+            // dao.getSearchResult(query)
+            if (query == "ALL") {
+                dao.getDefaultData(pathToSet)
+            } else {
+                dao.getSearchResultForSupply(query, pathToSet)
+            }
         }.liveData
     }
 }

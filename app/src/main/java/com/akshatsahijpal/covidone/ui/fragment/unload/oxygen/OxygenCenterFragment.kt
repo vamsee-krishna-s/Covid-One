@@ -29,7 +29,7 @@ class OxygenCenterFragment : Fragment(R.layout.fragment_oxygen_center) {
         super.onViewCreated(view, savedInstanceState)
         _binding = FragmentOxygenCenterBinding.bind(view)
         navController = Navigation.findNavController(view)
-
+      //  var typeOfDataToReturn: String = resources.getStringArray(R.array.resource_drop)[0]
         setHasOptionsMenu(true)
         _binding?.recyclerView101?.adapter = adap.withLoadStateHeaderAndFooter(
             header = CovidLoadStateAdapter {

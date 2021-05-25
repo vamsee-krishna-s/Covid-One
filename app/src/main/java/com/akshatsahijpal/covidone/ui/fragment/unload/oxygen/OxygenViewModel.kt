@@ -4,6 +4,7 @@ import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.*
 import androidx.paging.PagingData
 import androidx.paging.cachedIn
+import com.akshatsahijpal.covidone.R
 import com.akshatsahijpal.covidone.data.CovidData
 import com.akshatsahijpal.covidone.repositories.unloadingRepo.OxygenRepository
 
@@ -21,6 +22,6 @@ class OxygenViewModel @ViewModelInject constructor(private val repo: OxygenRepos
     }
 
     companion object {
-        private const val DEFAULT_QUERY = "Delhi"
+        private const val DEFAULT_QUERY = "ALL"
     }
 }

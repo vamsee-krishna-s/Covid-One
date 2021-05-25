@@ -21,6 +21,6 @@ class PlasmaViewModel @ViewModelInject constructor(private val repo: PlasmaRepos
     }
 
     companion object {
-        private const val DEFAULT_QUERY = "Delhi"
+        private const val DEFAULT_QUERY = "ALL"
     }
 }

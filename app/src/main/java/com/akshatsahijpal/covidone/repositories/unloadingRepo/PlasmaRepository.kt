@@ -8,6 +8,7 @@ import androidx.paging.liveData
 import com.akshatsahijpal.covidone.data.CovidData
 import com.akshatsahijpal.covidone.db.local.RunDAO
 import com.akshatsahijpal.covidone.db.remote.unload.dataSource.FetchPlasmaData
+import com.akshatsahijpal.covidone.util.Constants
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -35,6 +36,8 @@ class PlasmaRepository @Inject constructor(
         GlobalScope.launch{
             db.generateDataSet()
         }
+        val pathToSet:String = Constants.pathToData[1]
+
         return Pager(
             PagingConfig(
                 pageSize = 5,
@@ -42,7 +45,11 @@ class PlasmaRepository @Inject constructor(
                 enablePlaceholders = true
             )
         ) {
-            dao.getSearchResult(query)
+            if (query == "ALL") {
+                dao.getDefaultData(pathToSet)
+            } else {
+                dao.getSearchResultForSupply(query, pathToSet)
+            }
         }.liveData
     }
 }
