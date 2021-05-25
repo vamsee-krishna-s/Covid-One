@@ -5,6 +5,8 @@ import androidx.room.Room
 import com.akshatsahijpal.covidone.db.local.RunDAO
 import com.akshatsahijpal.covidone.db.local.RunningDatabase
 import com.akshatsahijpal.covidone.db.remote.unload.dataSource.FetchFireData
+import com.akshatsahijpal.covidone.db.remote.unload.dataSource.FetchPlasmaData
+import com.akshatsahijpal.covidone.db.remote.unload.dataSource.FetchQxygenData
 import com.akshatsahijpal.covidone.db.remote.upload.FirebaseUpload
 import com.akshatsahijpal.covidone.repositories.uploadingRepo.LogsRepository
 import com.akshatsahijpal.covidone.repositories.localRepo.MainRepository
@@ -41,6 +43,16 @@ object AppModule {
     @Provides
     fun provideFirebaseUnloader(db: FirebaseFirestore, dao: RunDAO) = FetchFireData(db, dao)
 
+
+    @Singleton
+    @Provides
+    fun providePlasmaUnloader(db: FirebaseFirestore, dao: RunDAO) = FetchPlasmaData(db, dao)
+
+    /*This */
+    @Singleton
+    @Provides
+    fun provideQxygenUnloader(db: FirebaseFirestore, dao: RunDAO) = FetchQxygenData(db, dao)
+
     @Provides
     @Singleton
     fun provideFirebase() = FirebaseFirestore.getInstance()
@@ -53,7 +65,5 @@ object AppModule {
     @Singleton
     fun provideLogRepo(upl: FirebaseUpload) = LogsRepository(upl)
 
-/*    @Provides
-    @Singleton
-    fun provideFetchFireData(db: FirebaseFirestore) = FetchFireData(db)*/
+
 }

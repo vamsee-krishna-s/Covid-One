@@ -49,7 +49,6 @@ class CovidMedAdapter : PagingDataAdapter<CovidData, CovidMedAdapter.Holder>(COM
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {
         val view = DipItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-
         return Holder(view)
     }
 
