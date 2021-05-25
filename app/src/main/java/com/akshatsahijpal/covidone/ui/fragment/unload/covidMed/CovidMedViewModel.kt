@@ -6,16 +6,19 @@ import androidx.paging.PagingData
 import androidx.paging.cachedIn
 import com.akshatsahijpal.covidone.data.CovidData
 import com.akshatsahijpal.covidone.repositories.unloadingRepo.CovidMedRepository
-import kotlinx.coroutines.async
-import kotlinx.coroutines.launch
 
 class CovidMedViewModel @ViewModelInject constructor(private val repo: CovidMedRepository) :
     ViewModel() {
-/*    var covidMedData: LiveData<PagingData<CovidData>> =
-        repo.getCovidMedData().cachedIn(viewModelScope)*/
+    /*
+
+    var covidMedData: LiveData<PagingData<CovidData>> =
+            repo.getCovidMedData().cachedIn(viewModelScope)
+            */
     private var currentQuery = MutableLiveData(DEFAULT_QUERY)
     fun getDataSetr(): LiveData<PagingData<CovidData>> {
-        return currentQuery.switchMap { queryVal -> repo.getSearchResult(queryVal).cachedIn(viewModelScope) }
+        return currentQuery.switchMap { queryVal ->
+            repo.getSearchResult(queryVal).cachedIn(viewModelScope)
+        }
     }
 
     fun searchModel(query: String) {
@@ -23,6 +26,6 @@ class CovidMedViewModel @ViewModelInject constructor(private val repo: CovidMedR
     }
 
     companion object {
-        private const val DEFAULT_QUERY = "Delhi"
+        private const val DEFAULT_QUERY = "ALL"
     }
 }

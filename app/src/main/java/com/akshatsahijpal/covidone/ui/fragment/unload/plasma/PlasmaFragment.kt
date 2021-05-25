@@ -47,7 +47,7 @@ class PlasmaFragment : Fragment(R.layout.fragment_plasma) {
             adap.submitData(viewLifecycleOwner.lifecycle, it)
         }
         _binding?.floatingActionButton4?.setOnClickListener {
-            navController.navigate(R.id.action_medSuppliesFragment_to_contributeDataFragment)
+            navController.navigate(R.id.action_plasmaFragment_to_contributeDataFragment)
         }
         adap.addLoadStateListener {
             _binding?.apply {

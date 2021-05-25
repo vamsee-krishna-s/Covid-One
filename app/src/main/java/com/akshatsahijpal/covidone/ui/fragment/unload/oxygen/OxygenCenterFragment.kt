@@ -45,7 +45,7 @@ class OxygenCenterFragment : Fragment(R.layout.fragment_oxygen_center) {
             adap.submitData(viewLifecycleOwner.lifecycle, it)
         }
         _binding?.floatingActionButton3?.setOnClickListener {
-            navController.navigate(R.id.action_medSuppliesFragment_to_contributeDataFragment)
+            navController.navigate(R.id.action_oxygenCenterFragment_to_contributeDataFragment)
         }
         adap.addLoadStateListener {
             _binding?.apply {
