@@ -8,7 +8,7 @@ import androidx.paging.liveData
 import com.akshatsahijpal.covidone.data.CovidData
 import com.akshatsahijpal.covidone.db.local.RunDAO
 import com.akshatsahijpal.covidone.db.remote.unload.dataSource.FetchFireData
-import com.akshatsahijpal.covidone.repositories.paginateSource.CovidMedDataSource
+import com.akshatsahijpal.covidone.util.Constants
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -29,13 +29,15 @@ class CovidMedRepository @Inject constructor(
             pagingSourceFactory = {
                 CovidMedDataSource(db)
             }
-        ).liveData*/
+        ).liveData
+*/
 
     fun getSearchResult(query: String):
             LiveData<PagingData<CovidData>> {
         GlobalScope.launch{
             db.generateDataSet()
         }
+        val pathToSet:String = Constants.pathToData[0]
         return Pager(
             PagingConfig(
                 pageSize = 5,
@@ -43,7 +45,11 @@ class CovidMedRepository @Inject constructor(
                 enablePlaceholders = true
             )
         ) {
-            dao.getSearchResult(query)
+            if (query == "ALL") {
+                dao.getDefaultData(pathToSet)
+            } else {
+                dao.getSearchResultForSupply(query, pathToSet)
+            }
         }.liveData
     }
 }
