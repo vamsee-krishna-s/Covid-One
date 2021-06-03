@@ -23,4 +23,5 @@ interface RunDAO {
 
     @Query("SELECT * FROM covid_table WHERE Resource LIKE :product")
     fun getDefaultData(product: String): PagingSource<Int, CovidData>
+    fun deleteDir()
 }
