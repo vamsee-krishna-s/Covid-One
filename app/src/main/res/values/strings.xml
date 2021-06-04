@@ -19,15 +19,15 @@
     <string name="retry">Retry</string>
     <string name="data_not_available">Data Not Available</string>
     <string-array name="resource_drop">
-        <item>
+       <item>
             Remdesivir, Favipiravir, Fabiflu,
             Tocilizumab
         </item>
         <item>
-            Plasma Donor
+            equipment /Blood/Plasma etc
         </item>
         <item>
-            Oxygen Kit, Cylinders, Refilling Centers
+            dignostics, ct scan,Doctors
         </item>
     </string-array>
 </resources>
